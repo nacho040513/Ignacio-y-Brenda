@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuestros lugares — Ignacio &amp; Brenda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="../assets/css/site-navigation.css" />
+  <link rel="stylesheet" href="../assets/css/places.css" />
+  <script>document.documentElement.classList.add('auth-pending');</script>
+</head>
+<body>
+  <main class="places-page">
+    <header class="places-heading">
+      <p class="places-eyebrow">Un diario en el mapa</p>
+      <h1>Nuestros lugares</h1>
+      <p>Los sitios que guardan una historia, desde el primer encuentro hasta la próxima aventura.</p>
+    </header>
+    <section class="places-content" aria-label="Mapa y lugares">
+      <div class="map-card">
+        <div class="map-card__header">
+          <div><p class="places-eyebrow">Explora</p><h2>Mapa de recuerdos</h2></div>
+          <ul class="map-legend" aria-label="Cantidad de lugares por estado">
+            <li><i class="is-visited" aria-hidden="true"></i><span>Visitado</span><strong class="map-legend__count" id="place-count-visitado" aria-label="0 visitados">0</strong></li>
+            <li><i class="is-favorite" aria-hidden="true"></i><span>Favorito</span><strong class="map-legend__count" id="place-count-favorito" aria-label="0 favoritos">0</strong></li>
+            <li><i class="is-pending" aria-hidden="true"></i><span>Pendiente</span><strong class="map-legend__count" id="place-count-pendiente" aria-label="0 pendientes">0</strong></li>
+          </ul>
+        </div>
+        <div id="real-map" aria-label="Mapa interactivo de nuestros lugares"></div>
+        <p class="map-card__hint">Los resultados del mapa usan datos de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a>.</p>
+        <section class="place-list-panel" aria-labelledby="place-list-title">
+          <h2 id="place-list-title">Lugares guardados</h2>
+          <p class="place-list-panel__intro">Ordenados de la fecha más antigua a la más reciente.</p>
+          <ul id="place-list" aria-live="polite"><li class="place-list__empty">Cargando lugares…</li></ul>
+        </section>
+      </div>
+
+      <aside class="place-editor" id="place-editor" hidden aria-labelledby="place-editor-title">
+        <p class="places-eyebrow">Solo administrador</p><h2 id="place-editor-title">Tus lugares</h2>
+        <button class="place-editor__add" id="add-place-toggle" type="button" aria-expanded="false" aria-controls="place-form">Agregar nuevo lugar</button>
+        <p class="place-editor__intro">Busca una dirección o lugar y selecciona el resultado correcto. El mapa completará las coordenadas.</p>
+        <form id="place-form" hidden>
+          <label>Nombre del recuerdo<input name="nombre" maxlength="100" required placeholder="Nuestro café favorito" /></label>
+          <div class="place-location-field">
+            <label for="place-search">Ubicación en el mapa</label>
+            <div class="place-location-field__search">
+              <input id="place-search" name="ubicacionTexto" maxlength="180" required autocomplete="off" placeholder="Ej. Parque Simón Bolívar, Bogotá" aria-describedby="place-search-help place-search-status" />
+              <button id="place-search-button" type="button">Buscar</button>
+            </div>
+            <p class="place-location-field__help" id="place-search-help">Escribe la dirección y pulsa Buscar. Luego elige una coincidencia.</p>
+            <p class="place-location-field__status" id="place-search-status" role="status" aria-live="polite"></p>
+            <ul class="place-location-results" id="place-location-results" aria-label="Resultados de ubicación" hidden></ul>
+            <input name="latitud" type="hidden" />
+            <input name="longitud" type="hidden" />
+          </div>
+          <div class="place-editor__grid"><label>Estado<select name="estado" required><option value="" disabled selected>Selecciona un estado</option><option value="Visitado">Visitado</option><option value="Favorito">Favorito</option><option value="Pendiente">Pendiente</option></select></label><label>Fecha<input name="fecha" type="datetime-local" required /></label></div>
+          <label>Descripción<textarea name="descripcion" maxlength="800" required placeholder="Lo que hizo especial este momento…"></textarea></label>
+          <label for="place-media-input">Foto o video
+            <input id="place-media-input" name="archivo" type="file" accept="image/*,video/*" capture="environment" aria-describedby="place-media-help place-media-status" />
+            <span class="place-location-field__help" id="place-media-help">Elige una imagen o un video de hasta 100 MB, o toma una foto con la cámara de tu celular. Si editas, puedes conservar el archivo actual.</span>
+          </label>
+          <input name="imagen" type="hidden" />
+          <div class="upload-preview" id="place-media-preview" hidden></div>
+          <p class="place-location-field__status" id="place-media-status" role="status" aria-live="polite"></p>
+          <button type="submit">Guardar lugar</button><p class="place-editor__message" id="place-message" role="status" aria-live="polite"></p>
+        </form>
+      </aside>
+
+      <aside class="place-access" id="place-access" hidden><p class="places-eyebrow">Espacio privado</p><h2>¿Quieres añadir un recuerdo?</h2><p>Tu cuenta todavía no puede agregar lugares. Si necesitas acceso, contacta al administrador.</p></aside>
+    </section>
+  </main>
+  <dialog class="place-notice" id="place-notice" aria-labelledby="place-notice-title">
+    <div class="place-notice__content">
+      <span class="place-notice__icon" id="place-notice-icon" aria-hidden="true"></span>
+      <h2 id="place-notice-title">Aviso</h2>
+      <p id="place-notice-message"></p>
+      <button id="place-notice-close" type="button">Entendido</button>
+    </div>
+  </dialog>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="../assets/js/places-map.js"></script>
+  <script type="module" src="../assets/js/site-navigation.js"></script>
+</body>
+</html>

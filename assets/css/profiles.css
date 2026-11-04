@@ -1,0 +1,25 @@
+.profile-initial { display: grid; width: 100%; height: 100%; place-items: center; background: linear-gradient(145deg, #d7ec95, #9eaa68); color: #35420c; font: 600 2rem/1 "Playfair Display", Georgia, serif; }
+.profile-initial--brenda { background: linear-gradient(145deg, #ffdf9e, #d5af62); color: #5b4300; }
+.profile-avatar { position: relative; flex: 0 0 auto; }
+.profile-avatar .profile-initial { position: absolute; inset: 0; }
+.profile-avatar img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; }
+.profile-detail { display: flex; align-items: flex-start; gap: .35rem; margin: .2rem 0 0; color: #46483b; font: 400 .9rem/1.45 Inter, Arial, sans-serif; }
+.profile-detail .material-symbols-outlined { flex: 0 0 auto; font-size: 1.1rem; }
+.profile-milestones { position: relative; display: grid; gap: 1rem; margin: 1.4rem 0 0; padding: 0 0 0 1.35rem; list-style: none; }
+.profile-milestones::before { position: absolute; top: .4rem; bottom: .4rem; left: .27rem; width: 1px; background: rgba(82,98,28,.28); content: ""; }
+.profile-milestones li { position: relative; display: grid; gap: .16rem; }
+.profile-milestones li::before { position: absolute; top: .35rem; left: -1.35rem; width: .58rem; height: .58rem; border: 2px solid #fff; border-radius: 50%; background: #785900; box-shadow: 0 0 0 1px rgba(120,89,0,.45); content: ""; }
+.profile-milestones time { color: #785900; font: 700 .76rem/1.4 Inter, Arial, sans-serif; letter-spacing: .025em; }
+.profile-milestones li span { color: #46483b; font: 500 1rem/1.45 Inter, Arial, sans-serif; }
+.profile-eyebrow { margin: 0 0 .6rem; color: #8a6719; font: 700 .72rem/1.2 Inter, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.profile-card-title { margin: 0; color: #52621c; font: 600 clamp(1.45rem, 2.7vw, 1.9rem)/1.2 "Playfair Display", Georgia, serif; }
+.profile-card-title--brenda { color: #785900; }
+.couple-story-card { display: grid; grid-template-columns: minmax(15rem, .8fr) minmax(0, 1.2fr); align-items: center; gap: clamp(1.5rem, 4vw, 3rem); margin: 0 0 4rem; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid rgba(82,98,28,.15); border-radius: 1.2rem; background: #fff; box-shadow: 0 .8rem 2.2rem rgba(40,47,17,.06); }
+.couple-story-card > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 45%; border-radius: .8rem; }
+.couple-story-card h2 { margin: 0; color: #35420c; font: 700 clamp(1.6rem, 4vw, 2.3rem)/1.12 "Playfair Display", Georgia, serif; text-wrap: balance; }
+.couple-story-card p:not(.places-eyebrow) { max-width: 36rem; color: #46483b; line-height: 1.65; }
+.couple-story-card__links { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.2rem; }
+.couple-story-card__links a { display: inline-flex; min-height: 2.8rem; align-items: center; padding: .7rem 1rem; border-radius: 999px; background: #52621c; color: #fff; font: 600 .82rem Inter, Arial, sans-serif; text-decoration: none; }
+.couple-story-card__links a:last-child { border: 1px solid rgba(82,98,28,.24); background: transparent; color: #35420c; }
+.couple-story-card__links a:focus-visible { outline: 3px solid rgba(82,98,28,.3); outline-offset: 3px; }
+@media (max-width: 700px) { .couple-story-card { grid-template-columns: 1fr; } .couple-story-card > img { aspect-ratio: 3 / 2; } }

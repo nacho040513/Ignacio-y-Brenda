@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Mantiene los permisos actuales de las colecciones usadas por el sitio.
+    match /Ubicaciones/{documentId} { allow read, write: if true; }
+    match /Albun/{documentId} { allow read, write: if true; }
+    match /Timeline/{documentId} { allow read, write: if true; }
+    match /Futuro/{documentId} { allow read, write: if true; }
+    match /usuarios/{documentId} { allow read, write: if true; }
+
+    // Los registros de acceso solo pueden crearse para el usuario autenticado.
+    // Ningún cliente puede consultar, modificar o borrar el historial de IPs.
+    match /Ingresos/{documentId} {
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.correo == request.auth.token.email
+        && request.resource.data.fecha == request.time
+        && request.resource.data.keys().hasAll(['uid', 'usuario', 'correo', 'fecha', 'dispositivo', 'ip'])
+        && request.resource.data.keys().hasOnly(['uid', 'usuario', 'correo', 'fecha', 'dispositivo', 'ip']);
+      allow read, update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

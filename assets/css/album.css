@@ -1,0 +1,87 @@
+#category-filters button:focus-visible { outline: 3px solid rgba(82,98,28,.28); outline-offset: 2px; }
+#category-filters button[aria-pressed="true"] { box-shadow: 0 3px 10px rgba(53,66,12,.14); }
+.album-empty { margin: 1.5rem auto; padding: 1.5rem; max-width: 42rem; border: 1px dashed rgba(82,98,28,.3); border-radius: 1rem; color: #46483b; text-align: center; line-height: 1.6; }
+.album-empty[hidden] { display: none; }
+.masonry-item[role="button"]:focus-visible { outline: 3px solid rgba(82,98,28,.35); outline-offset: 4px; border-radius: .6rem; }
+.polaroid { position: relative; }
+.memory-card__open { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.memory-card__open:focus-visible { outline: 3px solid rgba(82,98,28,.35); outline-offset: 3px; border-radius: .3rem; }
+.memory-card__open:disabled { cursor: default; }
+.memory-card__details { display: grid; gap: .35rem; margin-top: 1rem; padding: 0 .25rem; }
+.memory-card__title { color: #1c1b1b; font: 400 1rem/1.25 Inter, Arial, sans-serif; }
+.memory-card__meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; opacity: .72; }
+.memory-card__meta > span { min-width: 0; overflow-wrap: anywhere; }
+.album-card-edit { position: absolute; right: .45rem; bottom: .35rem; display: grid; width: 2.75rem; height: 2.75rem; place-items: center; border: 1px solid rgba(82,98,28,.16); border-radius: 50%; background: rgba(252,249,248,.94); color: #52621c; cursor: pointer; }
+.album-card-edit:hover, .album-card-edit:focus-visible { outline: 2px solid rgba(82,98,28,.3); background: #f0f4e5; }
+.album-card-edit svg { width: 1.1rem; height: 1.1rem; }
+.memory-image-placeholder { display: grid; min-height: 12rem; place-items: center; border-radius: .25rem; background: linear-gradient(145deg, #f0f2e8, #dfe4d0); color: #78845a; }
+.memory-image-placeholder .material-symbols-outlined { font-size: 2.5rem; }
+.album-actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 0 0 1.5rem; padding: 1rem 1.15rem; border: 1px solid rgba(82,98,28,.14); border-radius: .9rem; background: rgba(255,255,255,.72); }
+.album-actions p { margin: 0; color: #46483b; font: 400 .9rem/1.5 Inter, Arial, sans-serif; }
+.album-page-feedback { margin: -.8rem 0 1rem; padding: .75rem 1rem; border: 1px solid rgba(82,98,28,.2); border-radius: .7rem; background: #f0f4e5; color: #35420c; font: 500 .85rem/1.5 Inter, Arial, sans-serif; }
+.album-page-feedback[hidden] { display: none; }
+.album-add-button, .album-form__submit { display: inline-flex; min-height: 2.8rem; align-items: center; justify-content: center; gap: .5rem; padding: .7rem 1.05rem; border: 0; border-radius: 999px; background: #52621c; color: #fff; font: 600 .85rem Inter, Arial, sans-serif; cursor: pointer; }
+.album-add-button:hover, .album-form__submit:hover { background: #35420c; }
+.album-add-button:focus-visible, .album-form button:focus-visible { outline: 3px solid rgba(82,98,28,.32); outline-offset: 3px; }
+.album-add-button .material-symbols-outlined { font-size: 1.2rem; }
+.album-filter-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(14rem, 17rem); align-items: end; gap: 1.25rem; }
+.album-category-filter { min-width: 0; }
+.album-filter-label { display: block; margin: 0 0 .45rem; color: #46483b; font: 600 .75rem/1.3 Inter, Arial, sans-serif; }
+#category-filters { min-width: 0; }
+.album-location-filter { display: grid; min-width: 0; gap: .35rem; color: #46483b; font: 600 .75rem/1.3 Inter, Arial, sans-serif; }
+.album-location-filter select, .album-form select { box-sizing: border-box; width: 100%; min-height: 2.8rem; padding: .65rem 2rem .65rem .75rem; border: 1px solid rgba(118,120,105,.4); border-radius: .6rem; background: #fff; color: #1c1b1b; font: 400 .85rem/1.4 Inter, Arial, sans-serif; }
+.album-location-filter select:focus-visible, .album-form select:focus-visible { outline: 3px solid rgba(82,98,28,.17); border-color: #52621c; }
+.album-dialog { width: min(92vw, 34rem); max-height: min(90dvh, 48rem); padding: 0; overflow: auto; border: 1px solid rgba(82,98,28,.2); border-radius: 1.15rem; background: #fcf9f8; color: #1c1b1b; box-shadow: 0 1.5rem 4rem rgba(28,27,27,.24); }
+.album-dialog::backdrop { background: rgba(28,27,27,.58); backdrop-filter: blur(4px); }
+.album-form { display: grid; gap: .9rem; padding: clamp(1.2rem, 4vw, 1.75rem); }
+.album-form__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .2rem; }
+.album-form__eyebrow { margin: 0 0 .25rem; color: #795713; font: italic 500 .95rem/1.3 "Playfair Display", Georgia, serif; }
+.album-form h2 { margin: 0; color: #35420c; font: 600 clamp(1.5rem, 5vw, 2rem)/1.15 "Playfair Display", Georgia, serif; }
+.album-form__close { display: grid; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; place-items: center; border: 1px solid rgba(118,120,105,.3); border-radius: 50%; background: transparent; color: #35420c; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.album-form > label { display: grid; gap: .35rem; color: #383a2e; font: 600 .8rem/1.4 Inter, Arial, sans-serif; }
+.album-form input { box-sizing: border-box; width: 100%; min-height: 2.8rem; padding: .7rem .8rem; border: 1px solid rgba(118,120,105,.4); border-radius: .6rem; background: #fff; color: #1c1b1b; font: 400 .92rem/1.4 Inter, Arial, sans-serif; }
+.album-form input[type="file"] { padding: .55rem; font-size: .78rem; }
+.album-form input:focus-visible { outline: 3px solid rgba(82,98,28,.17); border-color: #52621c; }
+.album-field-help { color: #56584b; font: 400 .75rem/1.5 Inter, Arial, sans-serif; }
+.upload-preview { display: grid; min-height: 3rem; place-items: center; overflow: hidden; border: 1px solid rgba(82,98,28,.14); border-radius: .7rem; background: #f7f8f2; }
+.upload-preview[hidden] { display: none; }
+.upload-preview__media { display: block; width: 100%; max-height: 18rem; object-fit: contain; }
+.upload-preview__error { padding: 1rem; color: #9e2424; font: 400 .82rem/1.5 Inter, Arial, sans-serif; text-align: center; }
+.album-form__feedback { min-height: 1.25rem; margin: 0; color: #46483b; font: 400 .82rem/1.5 Inter, Arial, sans-serif; }
+.album-form__feedback[data-state="error"] { color: #9e2424; }
+.album-form__feedback[data-state="success"] { color: #35420c; }
+.album-place-field { display: grid; gap: .35rem; }
+.album-place-field > label { color: #383a2e; font: 600 .8rem/1.4 Inter, Arial, sans-serif; }
+.album-place-field__search { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .5rem; }
+.album-place-field__search input { min-width: 0; }
+.album-place-field__search button { min-width: 5rem; padding: .6rem .8rem; border: 0; border-radius: .6rem; background: #52621c; color: #fff; font: 600 .82rem Inter, Arial, sans-serif; cursor: pointer; }
+.album-place-field__search button:disabled { opacity: .6; cursor: wait; }
+.album-place-field__status { color: #46483b; font: 400 .76rem/1.5 Inter, Arial, sans-serif; }
+.album-place-field__status:empty { display: none; }
+.album-place-results { display: grid; gap: .3rem; max-height: 12rem; overflow-y: auto; margin: 0; padding: .35rem; border: 1px solid rgba(82,98,28,.2); border-radius: .7rem; background: #fff; list-style: none; }
+.album-place-results[hidden] { display: none !important; }
+.album-place-results button { width: 100%; padding: .65rem .7rem; border: 0; border-radius: .45rem; background: transparent; color: #1c1b1b; font: 400 .8rem/1.45 Inter, Arial, sans-serif; text-align: left; cursor: pointer; }
+.album-place-results button:hover, .album-place-results button:focus-visible { outline: none; background: #f0f4e5; }
+.album-form__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .65rem; margin-top: .2rem; }
+.album-form__cancel { min-height: 2.8rem; padding: .7rem 1rem; border: 1px solid rgba(118,120,105,.38); border-radius: 999px; background: transparent; color: #35420c; font: 600 .85rem Inter, Arial, sans-serif; cursor: pointer; }
+.album-form__submit:disabled { opacity: .65; cursor: wait; }
+@media (max-width: 760px) { .album-filter-controls { grid-template-columns: minmax(0, 1fr); align-items: stretch; gap: .85rem; } .album-location-filter { width: min(100%, 28rem); } }
+@media (max-width: 620px) { .album-actions { align-items: stretch; flex-direction: column; } .album-add-button { align-self: flex-start; } }
+.album-lightbox-close { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; background: rgba(28,27,27,.6); color: #fff; cursor: pointer; }
+.album-lightbox-close:hover { background: #35420c; color: #fff; }
+.album-lightbox-close:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.album-preview-data { display: grid; gap: .7rem; margin: 0; padding: .8rem 0; border-top: 1px solid rgba(118,120,105,.28); border-bottom: 1px solid rgba(118,120,105,.28); }
+.album-preview-data > div { display: grid; grid-template-columns: minmax(6rem, .7fr) minmax(0, 1.3fr); gap: .6rem; align-items: start; }
+.album-preview-data dt { color: #525447; font: 600 .68rem/1.4 Inter, Arial, sans-serif; }
+.album-preview-data dd { min-width: 0; margin: 0; color: #1c1b1b; font: 400 .75rem/1.45 Inter, Arial, sans-serif; overflow-wrap: anywhere; }
+.album-preview-data code { color: #46483b; font: 400 .68rem/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+.album-preview-tags { display: flex; flex-wrap: wrap; gap: .3rem; margin: 0; padding: 0; list-style: none; }
+.album-preview-tags li { padding: .22rem .45rem; border-radius: 999px; background: #eef1e5; color: #35420c; }
+.album-lightbox-content { height: min(92dvh, 56rem); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.album-lightbox-image { flex: 1 0 auto; }
+.album-lightbox-details { max-height: 88dvh; overflow-y: auto; }
+@media (max-width: 767px) {
+  .album-lightbox-content { justify-content: flex-start; padding-top: 2.5rem; }
+  .album-lightbox-image { flex: 0 0 auto; }
+  .album-lightbox-details { flex: 0 0 auto; max-height: none; margin-bottom: 1rem; }
+}

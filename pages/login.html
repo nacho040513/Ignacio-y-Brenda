@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acceso privado — Ignacio &amp; Brenda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/login.css" />
+  <link rel="stylesheet" href="../assets/css/site-navigation.css" />
+  <script>document.documentElement.classList.add('auth-pending');</script>
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <p>Zona privada</p>
+    <h1>Bienvenidos</h1>
+    <p>Inicia sesión con el correo y la contraseña de tu cuenta.</p>
+    <form id="login-form">
+      <label class="login-field">Correo electrónico<input name="email" type="email" autocomplete="email" required /></label>
+      <label class="login-field">Contraseña<span class="login-password"><input name="password" type="password" autocomplete="current-password" required /><button id="toggle-password" type="button" aria-label="Mostrar contraseña" aria-pressed="false">Mostrar</button></span></label>
+      <button class="login-button" type="submit">Iniciar sesión</button>
+      <p id="login-message" class="login-message" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+  <script type="module" src="../assets/js/login.js"></script>
+</body>
+</html>

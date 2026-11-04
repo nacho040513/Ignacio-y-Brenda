@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nuestros Recuerdos - Ignacio &amp; Brenda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#e3e2df",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#ffdf9e",
+                      "outline-variant": "#c6c8b6",
+                      "surface-container": "#f0edec",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1c1b1b",
+                      "on-primary-container": "#fbffe4",
+                      "background": "#fcf9f8",
+                      "surface-variant": "#e5e2e1",
+                      "primary-fixed-dim": "#bbcf7c",
+                      "on-primary-fixed-variant": "#3d4c05",
+                      "tertiary-fixed-dim": "#c7c7c3",
+                      "on-surface-variant": "#46483b",
+                      "surface-bright": "#fcf9f8",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#747572",
+                      "inverse-primary": "#bbcf7c",
+                      "primary-container": "#6a7c32",
+                      "secondary-fixed-dim": "#fabd00",
+                      "outline": "#767869",
+                      "on-tertiary-fixed-variant": "#464744",
+                      "on-secondary-fixed": "#261a00",
+                      "secondary": "#785900",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#313030",
+                      "primary-fixed": "#d7ec95",
+                      "secondary-container": "#fdc003",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#fdfcf8",
+                      "on-background": "#1c1b1b",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#161e00",
+                      "primary": "#52621c",
+                      "surface-tint": "#54651e",
+                      "on-secondary-fixed-variant": "#5b4300",
+                      "on-secondary-container": "#6c5000",
+                      "surface-dim": "#dcd9d9",
+                      "surface-container-low": "#f6f3f2",
+                      "tertiary": "#5b5c59",
+                      "surface": "#fcf9f8",
+                      "surface-container-high": "#ebe7e7",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed": "#1b1c1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "stack-md": "24px",
+                      "stack-lg": "64px",
+                      "stack-xl": "128px",
+                      "container-max": "1280px",
+                      "stack-sm": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "quote-it": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "quote-it": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .masonry-grid {
+            column-count: 2;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 4;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        .polaroid {
+            background-color: #ffffff;
+            padding: 8px 8px 48px 8px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .polaroid:hover {
+            transform: scale(1.02) rotate(-1deg);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+  <link rel="stylesheet" href="../assets/css/site-navigation.css"/>
+  <link rel="stylesheet" href="../assets/css/album.css"/>
+  <script>document.documentElement.classList.add('auth-pending');</script>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+
+<!-- Main Content -->
+<main class="pt-8 px-margin-mobile md:px-8 max-w-container-max mx-auto pb-stack-lg">
+<!-- Header Section -->
+<section class="text-center mb-stack-md">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-2">Nuestros Recuerdos</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Una colección de viajes, momentos especiales, favoritos y escenas de nuestra vida juntos.</p>
+</section>
+<div class="album-actions">
+  <p>Agrega una foto o un video, elige su categoría y relaciónalo con una ubicación guardada.</p>
+  <button class="album-add-button" id="album-add-open" type="button"><span class="material-symbols-outlined" aria-hidden="true">add_photo_alternate</span> Agregar recuerdo</button>
+</div>
+<p class="album-page-feedback" id="album-page-feedback" role="status" aria-live="polite" hidden></p>
+<dialog class="album-dialog" id="album-add-dialog" aria-labelledby="album-dialog-title">
+  <form class="album-form" id="album-entry-form">
+    <div class="album-form__heading"><div><p class="album-form__eyebrow">Nuevo recuerdo</p><h2 id="album-dialog-title">Agregar al álbum</h2></div><button class="album-form__close" id="album-add-close" type="button" aria-label="Cerrar formulario">×</button></div>
+    <label>Categoría<select name="Categoria" required><option value="" selected disabled>Selecciona una categoría</option><option value="Viajes">Viajes</option><option value="Momentos">Momentos</option><option value="Favoritos">Favoritos</option><option value="Casa">Casa</option><option value="Celebraciones">Celebraciones</option></select></label>
+    <div class="album-place-field">
+      <label for="album-place-search">Lugar</label>
+      <div class="album-place-field__search"><input id="album-place-search" name="Lugar" maxlength="240" required autocomplete="off" placeholder="Busca un lugar en el mapa" aria-describedby="album-place-help album-place-status"/><button id="album-place-search-button" type="button">Buscar</button></div>
+      <span class="album-field-help" id="album-place-help">Busca y selecciona un resultado para guardar el nombre del lugar.</span>
+      <span class="album-place-field__status" id="album-place-status" role="status" aria-live="polite"></span>
+      <ul class="album-place-results" id="album-place-results" aria-label="Resultados de búsqueda del mapa" hidden></ul>
+    </div>
+    <label for="album-media-input">Foto o video<input id="album-media-input" name="archivo" type="file" accept="image/*,video/*" capture="environment" aria-describedby="album-media-help album-media-status"/><span class="album-field-help" id="album-media-help">Elige una imagen o un video de hasta 100 MB, o toma una foto con la cámara de tu celular. Si editas, puedes conservar el archivo actual.</span></label>
+    <input name="RutaImagen" type="hidden"/>
+    <div class="upload-preview" id="album-media-preview" hidden></div>
+    <p class="album-place-field__status" id="album-media-status" role="status" aria-live="polite"></p>
+    <label>Tags<input name="Tags" maxlength="240" required placeholder="Naturaleza, Avión"/><span class="album-field-help">Separa las etiquetas con comas; se guardarán como un arreglo de textos.</span></label>
+    <label>Fecha del recuerdo<input name="Fecha" type="date" required/></label>
+    <label>Relacionar con una ubicación (opcional) <select name="id_ubicaciones" id="album-location-select"><option value="" selected>Sin relación</option></select><span class="album-field-help" id="album-location-status" role="status">Puedes vincular una ubicación guardada o dejarlo sin relación.</span></label>
+    <p class="album-form__feedback" id="album-form-feedback" role="status" aria-live="polite"></p>
+    <div class="album-form__actions"><button class="album-form__cancel" id="album-add-cancel" type="button">Cancelar</button><button class="album-form__submit" type="submit">Guardar recuerdo</button></div>
+  </form>
+</dialog>
+<!-- Categories (Scrollable Pills) -->
+<section class="mb-stack-md relative">
+<div class="album-filter-controls">
+<div class="album-category-filter">
+<span class="album-filter-label">Categoría</span>
+<div class="flex overflow-x-auto hide-scrollbar gap-3 pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0" id="category-filters">
+<button type="button" data-filter="todos" aria-pressed="true" class="flex-shrink-0 px-6 py-2 rounded-full bg-primary text-on-primary font-label-caps text-label-caps transition-transform hover:scale-95">Todos</button>
+<button type="button" data-filter="viajes" aria-pressed="false" class="flex-shrink-0 px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-caps text-label-caps transition-all">Viajes</button>
+<button type="button" data-filter="momentos" aria-pressed="false" class="flex-shrink-0 px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-caps text-label-caps transition-all">Momentos</button>
+<button type="button" data-filter="favoritos" aria-pressed="false" class="flex-shrink-0 px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-caps text-label-caps transition-all">Favoritos</button>
+<button type="button" data-filter="casa" aria-pressed="false" class="flex-shrink-0 px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-caps text-label-caps transition-all">Casa</button>
+<button type="button" data-filter="celebraciones" aria-pressed="false" class="flex-shrink-0 px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-caps text-label-caps transition-all">Celebraciones</button>
+<button type="button" data-filter="marcados" aria-pressed="false" class="flex-shrink-0 px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low font-label-caps text-label-caps transition-all">Marcados</button>
+</div>
+</div>
+<label class="album-location-filter">Ubicación
+  <select id="location-filter" aria-label="Filtrar recuerdos por ubicación"><option value="">Todas las ubicaciones</option></select>
+</label>
+</div>
+</section>
+<!-- Masonry Gallery -->
+<section class="masonry-grid" id="gallery-container" aria-live="polite"></section>
+<p class="album-empty" id="gallery-empty" role="status">Cargando sus recuerdos…</p>
+</main>
+
+<!-- Lightbox Modal (Hidden by default) -->
+<div class="fixed inset-0 z-[60] bg-inverse-surface/95 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4 md:p-12" id="lightbox" role="dialog" aria-modal="true" aria-label="Detalle del recuerdo" aria-hidden="true" inert tabindex="-1">
+<button class="album-lightbox-close absolute top-6 right-6 text-on-inverse-surface hover:text-white transition-colors z-10" type="button" aria-label="Cerrar recuerdo">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="album-lightbox-content relative max-w-5xl w-full flex flex-col md:flex-row items-center justify-center gap-8 translate-y-8 scale-95 transition-all duration-500 ease-out" id="lightbox-content">
+<!-- Image Area -->
+<div class="album-lightbox-image flex-1 w-full flex justify-center items-center min-h-[14rem] h-[38dvh] md:h-full">
+<img alt="" class="max-w-full max-h-full object-contain rounded-md shadow-2xl ring-1 ring-white/10" id="lightbox-img" hidden loading="lazy"/>
+<video class="max-w-full max-h-full rounded-md shadow-2xl ring-1 ring-white/10" id="lightbox-video" controls playsinline preload="metadata" hidden aria-label="Reproducir recuerdo"></video>
+</div>
+<!-- Details Area -->
+<div class="album-lightbox-details w-full md:w-80 bg-surface text-on-surface p-6 rounded-xl shadow-xl flex flex-col gap-4 self-end md:self-center">
+<h2 class="font-headline-md text-headline-md leading-tight" id="lightbox-title"></h2>
+<dl class="album-preview-data">
+  <div><dt>Categoría</dt><dd id="lightbox-category"></dd></div>
+  <div><dt>Lugar</dt><dd id="lightbox-location"></dd></div>
+  <div><dt>Fecha</dt><dd id="lightbox-date"></dd></div>
+  <div><dt>Ubicación relacionada</dt><dd id="lightbox-related-location"></dd></div>
+  <div><dt>id_ubicaciones</dt><dd><code id="lightbox-location-id"></code></dd></div>
+  <div><dt>RutaImagen</dt><dd><code id="lightbox-image-path"></code></dd></div>
+  <div><dt>Tags</dt><dd><ul class="album-preview-tags" id="lightbox-tags"></ul></dd></div>
+</dl>
+<p class="font-body-md text-body-md text-on-surface-variant italic font-quote-it mt-2" id="lightbox-desc" hidden></p>
+</div>
+</div>
+</div>
+<script>
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const lbImg = document.getElementById('lightbox-img');
+        const lbVideo = document.getElementById('lightbox-video');
+        const lbTitle = document.getElementById('lightbox-title');
+        const lbDate = document.getElementById('lightbox-date');
+        const lbLocation = document.getElementById('lightbox-location');
+        const lbCategory = document.getElementById('lightbox-category');
+        const lbRelatedLocation = document.getElementById('lightbox-related-location');
+        const lbLocationId = document.getElementById('lightbox-location-id');
+        const lbImagePath = document.getElementById('lightbox-image-path');
+        const lbTags = document.getElementById('lightbox-tags');
+        const lbDesc = document.getElementById('lightbox-desc');
+        const closeButton = lightbox.querySelector('button');
+        let previousFocus = null;
+
+        function openLightbox(element) {
+            previousFocus = document.activeElement;
+            // Extract data from the clicked masonry item
+            const imgEl = element.querySelector('img');
+            const title = element.dataset.titulo || element.querySelector('p')?.innerText || 'Recuerdo';
+            const mediaSource = element.dataset.mediaSrc || imgEl?.currentSrc || '';
+            if (!mediaSource) return;
+            const isVideo = /\.(mp4|webm|mov|m4v|ogv)(?:[?#].*)?$/i.test(element.dataset.rutaImagen || '');
+            
+            // Set Lightbox content
+            lbVideo.pause();
+            lbVideo.hidden = !isVideo;
+            lbImg.hidden = isVideo;
+            if (isVideo) {
+                lbImg.removeAttribute('src');
+                lbVideo.src = mediaSource;
+                lbVideo.load();
+            } else {
+                lbVideo.removeAttribute('src');
+                lbVideo.load();
+                lbImg.src = mediaSource;
+                lbImg.alt = imgEl?.alt || title;
+            }
+            lbTitle.innerText = title;
+            lbCategory.textContent = element.dataset.categoriaLabel || 'Sin categoría';
+            lbLocation.textContent = element.dataset.lugar || 'Sin lugar';
+            lbDate.textContent = element.dataset.fecha || 'Sin fecha';
+            lbRelatedLocation.textContent = element.dataset.ubicacionNombre || 'Sin ubicación relacionada';
+            lbLocationId.textContent = element.dataset.idUbicaciones || '—';
+            lbImagePath.textContent = element.dataset.rutaImagen || '—';
+            lbTags.replaceChildren();
+            let tags = [];
+            try { tags = JSON.parse(element.dataset.tags || '[]'); } catch { tags = []; }
+            tags.forEach((tag) => {
+                const item = document.createElement('li');
+                item.textContent = tag;
+                lbTags.append(item);
+            });
+            if (!tags.length) {
+                const emptyTag = document.createElement('li');
+                emptyTag.textContent = 'Sin etiquetas';
+                lbTags.append(emptyTag);
+            }
+            lbDesc.textContent = element.dataset.descripcion || '';
+            lbDesc.hidden = !lbDesc.textContent;
+
+            // Show Lightbox
+            lightbox.classList.remove('opacity-0', 'pointer-events-none');
+            lightbox.setAttribute('aria-hidden', 'false');
+            lightbox.inert = false;
+            lightboxContent.classList.remove('translate-y-8', 'scale-95');
+            lightboxContent.classList.add('translate-y-0', 'scale-100');
+            lightboxContent.scrollTop = 0;
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            closeButton.focus();
+        }
+
+        closeButton.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+            if (event.target.closest('.album-lightbox-close') || event.target.closest('.album-lightbox-details') || event.target === lbImg || event.target === lbVideo) return;
+            closeLightbox();
+        });
+
+        function closeLightbox() {
+            lbVideo.pause();
+            lbVideo.removeAttribute('src');
+            lbVideo.load();
+            lbImg.removeAttribute('src');
+            lbImg.hidden = true;
+            // Hide Lightbox
+            lightbox.classList.add('opacity-0', 'pointer-events-none');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightbox.inert = true;
+            lightboxContent.classList.add('translate-y-8', 'scale-95');
+            lightboxContent.classList.remove('translate-y-0', 'scale-100');
+            
+            setTimeout(() => {
+                document.body.style.overflow = ''; // Restore scrolling after animation
+                previousFocus?.focus();
+            }, 300);
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('opacity-0')) {
+                closeLightbox();
+            }
+            if (e.key === 'Tab' && !lightbox.inert) {
+                e.preventDefault();
+                closeButton.focus();
+            }
+        });
+    </script>
+<script type="module" src="../assets/js/album-gallery.js"></script>
+<script type="module" src="../assets/js/site-navigation.js"></script></body></html>

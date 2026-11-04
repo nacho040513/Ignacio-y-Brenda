@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Metas y Propósitos - Ignacio &amp; Brenda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e3e2df",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdf9e",
+                        "outline-variant": "#c6c8b6",
+                        "surface-container": "#f0edec",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-container": "#fbffe4",
+                        "background": "#fcf9f8",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed-dim": "#bbcf7c",
+                        "on-primary-fixed-variant": "#3d4c05",
+                        "tertiary-fixed-dim": "#c7c7c3",
+                        "on-surface-variant": "#46483b",
+                        "surface-bright": "#fcf9f8",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#747572",
+                        "inverse-primary": "#bbcf7c",
+                        "primary-container": "#6a7c32",
+                        "secondary-fixed-dim": "#fabd00",
+                        "outline": "#767869",
+                        "on-tertiary-fixed-variant": "#464744",
+                        "on-secondary-fixed": "#261a00",
+                        "secondary": "#785900",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#313030",
+                        "primary-fixed": "#d7ec95",
+                        "secondary-container": "#fdc003",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fdfcf8",
+                        "on-background": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#161e00",
+                        "primary": "#52621c",
+                        "surface-tint": "#54651e",
+                        "on-secondary-fixed-variant": "#5b4300",
+                        "on-secondary-container": "#6c5000",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary": "#5b5c59",
+                        "surface": "#fcf9f8",
+                        "surface-container-high": "#ebe7e7",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#1b1c1a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "stack-md": "24px",
+                        "stack-lg": "64px",
+                        "stack-xl": "128px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "quote-it": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "quote-it": ["24px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Smooth progress bar animation */
+        .progress-bar-fill {
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Checkbox animation */
+        .checkbox-custom:checked + label .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .check-icon {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s ease-in-out;
+        }
+        .strikethrough-animate {
+            position: relative;
+        }
+        .strikethrough-animate::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.3s ease-in-out;
+        }
+        .checkbox-custom:checked ~ .strikethrough-animate::after {
+            width: 100%;
+        }
+    </style>
+  <link rel="stylesheet" href="../assets/css/site-navigation.css"/>
+  <link rel="stylesheet" href="../assets/css/future.css"/>
+  <script>document.documentElement.classList.add('auth-pending');</script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+
+<main class="future-page">
+  <header class="future-heading">
+    <p class="future-eyebrow">Nuestro futuro</p>
+    <h1>Metas y sueños compartidos</h1>
+    <p>Un espacio para planear aventuras reales, celebrar cada paso y guardar las ideas que todavía esperan su momento.</p>
+  </header>
+  <p class="future-feedback" id="future-feedback" role="status" aria-live="polite" hidden></p>
+  <section class="future-section" aria-labelledby="goals-title">
+    <div class="future-section__heading"><div><p class="future-eyebrow">Paso a paso</p><h2 id="goals-title">Metas para construir</h2></div><p id="goals-summary" role="status">0 metas completadas</p></div>
+    <form id="goal-form" class="future-form">
+      <label>¿Qué quieren lograr juntos?<input name="title" maxlength="100" required placeholder="Ej. Planear nuestro próximo viaje" /></label>
+      <label>Fecha objetivo <span>(opcional)</span><input name="date" type="date" /></label>
+      <button type="submit"><span aria-hidden="true">＋</span> Agregar meta</button>
+    </form>
+    <ul id="goal-list" class="future-list" aria-live="polite"></ul>
+  </section>
+  <section class="future-section future-section--bucket" aria-labelledby="bucket-title">
+    <div class="future-section__heading"><div><p class="future-eyebrow">Algún día</p><h2 id="bucket-title">Nuestra lista de sueños</h2></div><p id="bucket-summary" role="status">0 sueños cumplidos</p></div>
+    <p class="future-section__intro">Ideas pequeñas y grandes que quieren vivir juntos.</p>
+    <form id="bucket-form" class="future-form future-form--single">
+      <label>Agregar un sueño<input name="title" maxlength="120" required placeholder="Ej. Ver el amanecer desde una montaña" /></label>
+      <button type="submit"><span aria-hidden="true">＋</span> Agregar sueño</button>
+    </form>
+    <ul id="bucket-list" class="future-list" aria-live="polite"></ul>
+  </section>
+  <dialog class="future-edit-dialog" id="future-edit-dialog" aria-labelledby="future-edit-title">
+    <form class="future-edit-form" id="future-edit-form">
+      <div class="future-edit-form__heading"><h2 id="future-edit-title">Editar elemento</h2><button class="future-item__icon-button" type="button" id="future-edit-close" aria-label="Cerrar"><span class="material-symbols-outlined" aria-hidden="true">close</span></button></div>
+      <input name="id" type="hidden"/><input name="type" type="hidden"/>
+      <label>Nombre<input name="title" maxlength="120" required/></label>
+      <label id="future-edit-date-label">Fecha objetivo <span>(opcional)</span><input name="date" type="date"/></label>
+      <p class="future-edit-feedback" id="future-edit-feedback" role="status" aria-live="polite"></p>
+      <div class="future-edit-form__actions"><button class="future-item__text-button" type="button" id="future-edit-cancel">Cancelar</button><button class="future-edit-form__save" type="submit">Guardar cambios</button></div>
+    </form>
+  </dialog>
+  <p class="future-storage-note"><span class="material-symbols-outlined" aria-hidden="true">cloud_done</span> Aquí pueden guardar las metas que quieren cumplir y los sueños que quieren vivir juntos.</p>
+</main>
+
+
+<script type="module" src="../assets/js/future-plans.js"></script>
+<script type="module" src="../assets/js/site-navigation.js"></script></body></html>

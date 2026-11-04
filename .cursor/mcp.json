@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "ui-ux-pro": {
+      "command": "npx",
+      "args": [
+        "--yes",
+        "ui-ux-pro-mcp",
+        "--stdio"
+      ]
+    }
+  }
+}

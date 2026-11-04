@@ -1,0 +1,110 @@
+:root {
+  --olive: #52621c;
+  --olive-dark: #35420c;
+  --paper: #fcf9f8;
+  --ink: #1c1b1b;
+  --soft-ink: #54564a;
+  --gold: #89620f;
+}
+
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, Arial, sans-serif; }
+button, input, select, textarea { font: inherit; }
+.places-page { width: min(1280px, calc(100% - 2rem)); margin: 0 auto; padding: 1.25rem 0 5rem; }
+.places-heading { max-width: 48rem; margin: 1.5rem auto 2rem; text-align: center; }
+.places-heading h1 { margin: 0; color: var(--olive-dark); font: 700 clamp(2rem, 5vw, 3.4rem)/1.08 "Playfair Display", Georgia, serif; text-wrap: balance; }
+.places-heading > p:last-child { max-width: 38rem; margin: .85rem auto 0; color: var(--soft-ink); line-height: 1.65; }
+.places-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem); align-items: start; gap: 1.5rem; }
+.map-card, .place-editor, .place-access { border: 1px solid rgba(82,98,28,.2); border-radius: 1.25rem; background: #fff; box-shadow: 0 .8rem 2.5rem rgba(40,47,17,.08); }
+.map-card { overflow: hidden; }
+.map-card__header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.4rem 1.5rem; }
+.places-eyebrow { margin: 0 0 .65rem; color: inherit; font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.map-card h2, .place-editor h2, .place-access h2 { margin: 0; color: var(--olive-dark); font: 700 clamp(1.55rem, 3vw, 2.1rem)/1.08 "Playfair Display", Georgia, serif; }
+.map-card__header .places-eyebrow, .place-editor .places-eyebrow, .place-access .places-eyebrow { color: var(--gold); }
+.map-legend { display: flex; flex-wrap: wrap; gap: .7rem; margin: 0; padding: 0; list-style: none; color: var(--soft-ink); font-size: .75rem; }
+.map-legend li { display: flex; align-items: center; gap: .4rem; }
+.map-legend__count { display: inline-grid; min-width: 1.5rem; height: 1.5rem; place-items: center; padding: 0 .35rem; border: 1px solid rgba(82,98,28,.14); border-radius: 999px; background: #f6f7f1; color: var(--olive-dark); font-size: .72rem; font-variant-numeric: tabular-nums; font-weight: 700; }
+.map-legend i { display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; }
+.is-visited { background: var(--olive); }
+.is-favorite { background: var(--gold); }
+.is-pending { background: #8c8e82; }
+#real-map { height: min(68vh, 640px); min-height: 28rem; }
+.map-card__hint { margin: 0; padding: .85rem 1.5rem; color: var(--soft-ink); font-size: .8rem; }
+.place-list-panel { padding: 1.2rem 1.5rem 1.5rem; border-top: 1px solid rgba(82,98,28,.12); }
+.place-list-panel h2 { margin: 0 0 .75rem; color: var(--olive-dark); font: 600 1.2rem/1.2 "Playfair Display", Georgia, serif; }
+.place-list-panel__intro { margin: -.3rem 0 .9rem; color: var(--soft-ink); font-size: .78rem; line-height: 1.45; }
+.place-list-panel ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .6rem; margin: 0; padding: 0; list-style: none; }
+.place-list__button { display: grid; width: 100%; gap: .3rem; padding: .8rem .9rem; border: 1px solid rgba(82,98,28,.15); border-radius: .7rem; background: #fcfdf9; color: var(--ink); text-align: left; cursor: pointer; }
+.place-list__button:hover, .place-list__button:focus-visible { outline: 2px solid rgba(82,98,28,.3); background: #f0f4e5; }
+.place-list__button strong { color: var(--olive-dark); }
+.place-list__button span, .place-list__empty { color: var(--soft-ink); font-size: .8rem; line-height: 1.45; }
+.place-list__item--editable { position: relative; }
+.place-list__item--editable .place-list__button { padding-bottom: 3.2rem; }
+.place-list__edit { position: absolute; right: .45rem; bottom: .35rem; display: grid; width: 2.75rem; height: 2.75rem; place-items: center; border: 1px solid rgba(82,98,28,.18) !important; border-radius: 50%; background: #fcfdf9 !important; color: var(--olive-dark) !important; cursor: pointer; }
+.place-list__edit:hover, .place-list__edit:focus-visible { outline: 2px solid rgba(82,98,28,.3); background: #f0f4e5 !important; }
+.place-list__edit svg { width: 1.25rem; height: 1.25rem; }
+.place-list__empty { padding: .4rem 0; list-style: none; }
+.memory-marker-wrapper { border: 0; background: transparent; }
+.memory-marker { display: grid; width: 34px; height: 34px; place-items: center; border: 3px solid #fff; border-radius: 50% 50% 50% 0; background: var(--marker-color); color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.28); font-size: 17px; transform: rotate(-45deg); }
+.memory-marker b { transform: rotate(45deg); }
+.map-popup { width: min(17rem, calc(100vw - 5.5rem)); min-width: min(11rem, calc(100vw - 5.5rem)); color: var(--ink); font-family: Inter, sans-serif; }
+.map-popup__image, .map-popup__video { display: block; width: 100%; max-height: 10rem; aspect-ratio: 16 / 10; margin: 0 0 .8rem; border-radius: .65rem; background: #eef1e5; object-fit: cover; }
+.map-popup__image-placeholder { display: grid; min-height: 5rem; margin: 0 0 .8rem; padding: .7rem; place-items: center; border-radius: .65rem; background: #eef1e5; color: var(--soft-ink); font-size: .75rem; line-height: 1.45; text-align: center; }
+.map-popup h2 { margin: 0 0 .55rem; font: 700 1.2rem/1.15 "Playfair Display", Georgia, serif; overflow-wrap: anywhere; }
+.map-popup p { margin: .35rem 0; line-height: 1.45; }
+.map-popup__status { margin: 0 !important; color: var(--olive); font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+.map-popup__data { display: grid; gap: .45rem; margin: .65rem 0 .8rem; padding: .65rem 0; border-top: 1px solid rgba(82,98,28,.14); border-bottom: 1px solid rgba(82,98,28,.14); }
+.map-popup__data > div { display: grid; grid-template-columns: 5.3rem minmax(0,1fr); gap: .45rem; align-items: start; }
+.map-popup__data dt { color: var(--soft-ink); font-size: .68rem; font-weight: 700; }
+.map-popup__data dd { min-width: 0; margin: 0; color: var(--ink); font-size: .74rem; line-height: 1.45; overflow-wrap: anywhere; }
+.map-popup a { color: var(--olive-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+.place-editor, .place-access { padding: 1.5rem; }
+.place-editor__intro, .place-access p:not(.places-eyebrow) { color: var(--soft-ink); font-size: .9rem; line-height: 1.55; }
+.place-editor__add { width: 100%; margin-top: 1rem; padding: .8rem 1rem; border: 1px solid rgba(82,98,28,.25); border-radius: .65rem; background: #f0f4e5; color: var(--olive-dark); font-weight: 700; cursor: pointer; }
+.place-editor__add:hover { background: #e5edcf; color: var(--olive-dark); }
+.place-location-field { display: grid; gap: .4rem; }
+.place-location-field > label { color: #3c402e; font-size: .78rem; font-weight: 700; }
+.place-location-field__search { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .5rem; }
+.place-location-field__search button { min-width: 5.5rem; padding: .65rem .9rem; }
+.place-location-field__search button:disabled { opacity: .65; cursor: wait; }
+.place-location-field__help, .place-location-field__status { margin: 0; color: var(--soft-ink); font-size: .76rem; line-height: 1.45; }
+.place-location-field__status:empty { display: none; }
+.place-location-results { display: grid; gap: .35rem; margin: 0; padding: .35rem; border: 1px solid rgba(82,98,28,.2); border-radius: .75rem; background: #fff; list-style: none; }
+.place-location-results[hidden] { display: none !important; }
+.place-location-results button { display: block; width: 100%; padding: .7rem .75rem; border: 0; border-radius: .45rem; background: transparent; color: var(--ink); font-size: .8rem; line-height: 1.45; text-align: left; cursor: pointer; }
+.place-location-results button:hover, .place-location-results button:focus-visible { outline: none; background: #f0f4e5; }
+.place-editor form { display: grid; gap: .85rem; margin-top: 1.25rem; }
+.place-editor [hidden] { display: none !important; }
+.place-editor label { display: grid; gap: .35rem; color: #3c402e; font-size: .78rem; font-weight: 700; }
+.place-editor input, .place-editor select, .place-editor textarea { box-sizing: border-box; width: 100%; padding: .65rem .7rem; border: 1px solid rgba(82,98,28,.27); border-radius: .6rem; background: #fcfdf9; color: var(--ink); }
+.place-editor input[type="file"] { padding: .55rem; font-size: .78rem; }
+.place-editor textarea { min-height: 5rem; resize: vertical; }
+.place-editor input:focus, .place-editor select:focus, .place-editor textarea:focus { outline: 3px solid rgba(82,98,28,.16); border-color: var(--olive); }
+.place-editor__grid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.place-editor button, .place-access a { display: inline-flex; min-height: 2.75rem; align-items: center; justify-content: center; border: 0; border-radius: .65rem; background: var(--olive); color: #fff; font-weight: 700; text-decoration: none; cursor: pointer; }
+.place-editor button:disabled { opacity: .6; cursor: wait; }
+.place-editor__message { min-height: 1.25rem; margin: 0; color: var(--soft-ink); font-size: .78rem; }
+.place-editor__message.error { color: #9e1c1c; }
+.place-editor__message.success { color: var(--olive-dark); }
+.upload-preview { display: grid; min-height: 3rem; place-items: center; overflow: hidden; border: 1px solid rgba(82,98,28,.14); border-radius: .7rem; background: #f7f8f2; }
+.upload-preview[hidden] { display: none; }
+.upload-preview__media { display: block; width: 100%; max-height: 18rem; object-fit: contain; }
+.upload-preview__error { padding: 1rem; color: #9e1c1c; font-size: .82rem; text-align: center; }
+.place-notice { width: min(92vw, 26rem); padding: 0; border: 1px solid rgba(82,98,28,.18); border-radius: 1rem; background: #fff; color: var(--ink); box-shadow: 0 1.25rem 3rem rgba(25,31,11,.24); }
+.place-notice::backdrop { background: rgba(22,25,16,.48); }
+.place-notice__content { display: grid; justify-items: center; gap: .8rem; padding: 2rem; text-align: center; }
+.place-notice__icon { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border-radius: 50%; background: #edf3df; color: var(--olive-dark); font-size: 1.4rem; font-weight: 700; }
+.place-notice[data-type="error"] .place-notice__icon { background: #fff0ed; color: #9e1c1c; }
+.place-notice h2 { margin: 0; color: var(--olive-dark); font: 700 1.55rem/1.15 "Playfair Display", Georgia, serif; }
+.place-notice p { margin: 0; color: var(--soft-ink); font-size: .9rem; line-height: 1.55; }
+.place-notice button { min-height: 2.7rem; margin-top: .35rem; padding: .65rem 1.25rem; border: 0; border-radius: 999px; background: var(--olive); color: #fff; font-weight: 700; cursor: pointer; }
+
+@media (max-width: 900px) {
+  .places-content { grid-template-columns: 1fr; }
+  .place-editor, .place-access { max-width: none; }
+}
+@media (max-width: 580px) {
+  .places-page { width: min(100% - 1rem, 1280px); padding-top: .5rem; }
+  .map-card__header { align-items: flex-start; flex-direction: column; padding: 1.2rem; }
+  #real-map { min-height: 22rem; height: 58vh; }
+  .place-editor__grid { grid-template-columns: 1fr; }
+}
