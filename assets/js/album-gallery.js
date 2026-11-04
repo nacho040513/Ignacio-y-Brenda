@@ -1,7 +1,7 @@
 import { createAlbumDocument, getAlbumDocuments, getAlbumLocationReferences, updateAlbumDocument } from './firestore-collections.js';
 import { formatDate } from './firestore-fields.js';
 import { escapeHtml, resolveAssetPath } from './dom-utils.js';
-import { clearMediaPreview, isVideoMedia, resolveMediaUrl, showMediaPreview, uploadMediaFile, validateMediaFile } from './media-storage.js';
+import { clearMediaPreview, isVideoMedia, resolveMediaUrl, showMediaPreview, uploadMediaFile, validateMediaFile } from './media-storage.js?v=hostinger-media-20261103';
 
 const container = document.getElementById('gallery-container');
 const activePill = ['bg-primary', 'text-on-primary'];

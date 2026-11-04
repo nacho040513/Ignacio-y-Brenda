@@ -2,7 +2,7 @@ import { db, auth } from './firebase-client.js';
 import { addDoc, collection, doc, GeoPoint, getDocs, query, Timestamp, updateDoc, where } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
 import { fieldReader, readText } from './firestore-fields.js';
-import { clearMediaPreview, isVideoMedia, resolveMediaUrl, showMediaPreview, uploadMediaFile, validateMediaFile } from './media-storage.js';
+import { clearMediaPreview, isVideoMedia, resolveMediaUrl, showMediaPreview, uploadMediaFile, validateMediaFile } from './media-storage.js?v=hostinger-media-20261103';
 
 const markerColors = { visitado: '#52621c', favorito: '#bd8713', pendiente: '#8c8e82' };
 const form = document.querySelector('#place-form');
